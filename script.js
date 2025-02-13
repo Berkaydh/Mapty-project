@@ -72,12 +72,6 @@ class Cycling extends Workout {
   }
 }
 
-// const run1 = new Running([39, -12], 5.2, 24, 178);
-// const cycling1 = new Cycling([39, -12], 27, 95, 523);
-// console.log(run1, cycling1);
-
-///////////////////////////////////////
-// APPLICATION ARCHITECTURE
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.form__input--type');
@@ -93,13 +87,10 @@ class App {
   #workouts = [];
 
   constructor() {
-    // Get user's position
     this._getPosition();
 
-    // Get data from local storage
     this._getLocalStorage();
 
-    // Attach event handlers
     form.addEventListener('submit', this._newWorkout.bind(this));
     inputType.addEventListener('change', this._toggleElevationField);
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
@@ -142,7 +133,6 @@ class App {
   }
 
   _hideForm() {
-    // Empty inputs
     inputDistance.value =
       inputDuration.value =
       inputCadence.value =
